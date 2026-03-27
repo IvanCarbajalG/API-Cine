@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceCineApplication<service_cine>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.ivancarbajal.service_cine.ServiceCineApplication",
+            "projectName": "service_cine",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
