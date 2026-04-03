@@ -22,7 +22,7 @@ import com.ivancarbajal.service_cine.model.Usuario;
             }
             //mapeamos el DTO a la entidad Usuario
             Usuario usuario = new Usuario();
-            usuario.setNombreUsuario(dto.getNombre());
+            usuario.setNombreUsuario(dto.getNombreUsuario());
             usuario.setEmail(dto.getEmail());
 
             //2. Segiridad encriptar la contraseña antes de guardarla

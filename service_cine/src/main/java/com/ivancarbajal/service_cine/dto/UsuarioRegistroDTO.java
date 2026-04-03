@@ -6,9 +6,9 @@ import jakarta.validation.constraints.*;
 @Data
 public class UsuarioRegistroDTO {
 
-    @NotBlank(message = "El nombre no puede estar vacío")
-    @Size(min = 3, max = 50, message = "El nombre debe tener entre 3 y 50 caracteres")
-    private String nombre;
+    @NotBlank(message = "El nombre de usuario no puede estar vacío")
+    @Size(min = 3, max = 50, message = "El nombre de usuario debe tener entre 3 y 50 caracteres")
+    private String nombreUsuario;
 
     @NotBlank(message = "El email es obligatorio")
     @Email(message = "El email deber ser un formato de email válido")
