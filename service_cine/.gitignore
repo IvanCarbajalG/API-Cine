@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+.settings/
+
+### Security ###
+service_cine/src/main/resources/application.properties
