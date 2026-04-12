@@ -1,22 +1,24 @@
 package com.ivancarbajal.service_cine.model;
 
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 //Para que spring sepa que es una entidad de la base de datos, se le pone la anotación @Entity
-@Entity
-@Table(name = "usuario")
-// Lombok es una librería que nos ayuda a reducir el código boilerplate, como
-// getters, setters, constructores, etc. Con la anotación @Data, Lombok genera
-// automáticamente getters, setters, toString, equals y hashCode para todos los
-// campos de la clase.
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Usuario {
+@Table(name = "usuario")
+public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
@@ -33,4 +35,34 @@ public class Usuario {
 
     @Column(name = "rol", nullable = false, length = 50)
     private String rol;
+    
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority("ROLE_" + rol));
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }

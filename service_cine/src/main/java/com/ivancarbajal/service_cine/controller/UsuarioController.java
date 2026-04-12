@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequiredArgsConstructor //Inyecta UsuarioService por el controlador
 public class UsuarioController {
 
-    private final UsuarioService usuarioService;
+    private final UsuarioService usuarioService; 
 
-    @PostMapping("/registro")
+    @PostMapping("/registro") 
     public ResponseEntity<String> registrar(@Valid @RequestBody UsuarioRegistroDTO dto) {
         try {
             usuarioService.registrarUsuario(dto);
