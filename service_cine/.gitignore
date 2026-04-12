@@ -34,4 +34,4 @@ build/
 .settings/
 
 ### Security ###
-service_cine/src/main/resources/application.properties
+/service_cine/src/main/resources/application.properties
