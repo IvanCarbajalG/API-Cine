@@ -1,12 +1,12 @@
 spring.application.name=service_cine
 #Configuration de la base de datos
-spring.datasource.url= jdbc:mysql://localhost:3306/cine
-spring.datasource.username=root
-spring.datasource.password=
+spring.datasource.url= jdbc:mysql://localhost:3306/BaseDeDatos
+spring.datasource.username=USUARIODB
+spring.datasource.password=PASSWORDDB
 #Configuración de JPA
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 
-application.security.jwt.secret-key=EstaEsUnaLlaveSuperSecretaParaMiProyectoDeCine2026DebeSerLarga
+application.security.jwt.secret-key=llaveSuperSecretaDeEjemplo
 application.security.jwt.expiration=86400000
